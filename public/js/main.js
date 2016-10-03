@@ -1,6 +1,6 @@
 window.onload = function() { init();};
 
-var public_spreadsheet_url = 'http://docs.google.com/spreadsheets/d/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml?widget=true&amp;headers=false';
+var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml';
 
 function init() {
   Tabletop.init( { key: public_spreadsheet_url,
@@ -18,4 +18,6 @@ function showInfo(data, tabletop) {
 
 
 }
+
+
 

@@ -25,22 +25,26 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <h1>DucaApp-Test</h1>
+        <div id="nav">
+        	<h1>DucaApp-Test</h1>
+        </div>	
 	    
 	    <div id="content"></div>
 	    
 	    <script id="cam-template" type="text/x-handlebars-template">
-	      	<div class="entry">
-	        	<h2>{{Make}}</h2>
-	        	<h3>{{Model}}</h3>
-	        	<div class="body">
-	          	{{{Type}}}<br>
-	          	{{{Codec}}}<br>
-	          	{{{Resolution}}}<br>
-	          	{{{Frame_Rate}}}<br>
-				{{{Data_Rate}}}
-	        	</div>
-	      	</div>
+	      	<button class="entry-button">
+		      	<div class="entry">
+		        	<h2>{{Make}}</h2>
+		        	<h3>{{Model}}</h3>
+		        	<div class="body">
+		          	{{{Type}}}<br>
+		          	{{{Codec}}}<br>
+		          	{{{Resolution}}}<br>
+		          	{{{Frame_Rate}}}<br>
+					{{{Data_Rate}}}
+		        	</div>
+		      	</div>
+	      	</button>
         
 
 		
@@ -50,7 +54,7 @@
 		  var config = {
 		    apiKey: "AIzaSyC7shgmnxvYlEAj2HoTFsGTrzstPRuMlKo",
 		    authDomain: "duca-appypappy.firebaseapp.com",
-		    databaseURL: "https://duca-appypappy.firebaseio.com",
+		    databaseURL: "http://duca-appypappy.firebaseio.com",
 		    storageBucket: "",
 		    messagingSenderId: "615547821918"
 		  };
