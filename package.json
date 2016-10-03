@@ -1,0 +1,26 @@
+{
+  "name": "duca-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.16.1",
+    "del": "^2.2.2",
+    "firebase-tools": "^3.0.8",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "handlebars": "^4.0.5",
+    "run-sequence": "^1.2.2"
+  }
+}
