@@ -19,3 +19,14 @@ function showInfo(data, tabletop) {
 
 }
 
+$(function() {
+	$(".search").click(function() {
+		if ($(".search").val() == ""){
+			$(".search").val(""); 
+		}
+	});
+});
+
+
+
+
