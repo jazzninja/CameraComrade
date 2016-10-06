@@ -3,8 +3,7 @@ window.onload = function() { init();};
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml';
 
 function init() {
-  Tabletop.init( { key: public_spreadsheet_url,
-                   callback: showInfo } );
+	document.getElementById('splash').style.display = 'block'; 
 }
 
 function showInfo(data, tabletop) {
@@ -15,9 +14,14 @@ function showInfo(data, tabletop) {
     	var html = template(cam);
         $("#content").append(html);
     });
-
-
 }
+
+function SplashBeGone() { 
+  $('#splash').fadeOut(600);
+  Tabletop.init( { key: public_spreadsheet_url,
+                   		callback: showInfo } );
+}
+
 
 
 
