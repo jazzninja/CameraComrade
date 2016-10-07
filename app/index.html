@@ -1,7 +1,7 @@
 
 
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="utf-8">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/tabletop/src/tabletop.js"></script>
         <script type="text/javascript" src="js/handlebars.min-latest.js"></script>
+        <script type="text/javascript" src="js/sheetsee.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     </head>
     <body>
@@ -30,10 +31,11 @@
 		</div>
 
 	    <div id="nav">
-	    	<h1>DucaApp-Test</h1>
-	    </div>	
-	    
-	   	<div id="content"></div>
+	    	<h1>DucaApp-Test<br/><input id="tableFilter" type="text" placeholder="filter by.."></input></h1>
+	    </div>
+	   	<div id="content">
+	   		<!--<button id="button-showinfo">Show Info</button>-->
+	   	</div>
 	    
 	    <script id="cam-template" type="text/x-handlebars-template">
 	      	<button class="entry-button">
@@ -53,7 +55,7 @@
 
 		
 		<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
-		<script>
+		<!--<script>
 		  // Initialize Firebase
 		  var config = {
 		    apiKey: "AIzaSyC7shgmnxvYlEAj2HoTFsGTrzstPRuMlKo",
@@ -63,7 +65,7 @@
 		    messagingSenderId: "615547821918"
 		  };
 		  firebase.initializeApp(config);
-		</script>
+		</script>-->
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
