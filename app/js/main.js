@@ -16,18 +16,6 @@ function showInfo(data, tabletop) {
     });
 }
 
-/*function callback(data) {
-	document.addEventListener('DOMContentLoaded', function() {
-      var tableOptions = {
-                          "data": gData,
-                          "tableDiv": "#content",
-                          "filterDiv": "#siteTableFilter",
-                          }
-      Sheetsee.makeTable(tableOptions)
-      Sheetsee.initiateTableFilter(tableOptions)
-    })
-}*/
-
 function SplashBeGone() { 
   $('#splash').fadeOut(600);
   Tabletop.init( { key: public_spreadsheet_url,
