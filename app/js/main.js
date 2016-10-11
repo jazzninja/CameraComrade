@@ -21,10 +21,19 @@ function SplashBeGone() {
   Tabletop.init( { key: public_spreadsheet_url,
   					callback: showInfo,
   					simpleSheet: true} );
-}
+};
 
 
+$("#search-btn").click(function(){
+	var hitTemplate = Handlebars.compile($("#cam-template").html());
 
+  	$("#content").empty();
+  	$.getJSON($("#tableFilter").val() + "&wt=json&json.wrf=?&indent=true", function(result){
+    	for (var i = 0; i < result.response.docs.length; i++) {
+      	$("#content").append(hitTemplate({title: result.response.docs[i].title, text: result.response.docs[i].text}));
+    	}
+  	});
+});
 
 //document.getElementById("button-showinfo").onclick = showInfo();
 /*document.getElementById("button-show-info").on("click", showInfo());*/

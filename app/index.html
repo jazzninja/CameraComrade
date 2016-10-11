@@ -16,10 +16,10 @@
 
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/tabletop/src/tabletop.js"></script>
-        <script type="text/javascript" src="js/handlebars.min-latest.js"></script>
+        
         <script type="text/javascript" src='js/sheetsee.js'></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+        <!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+        <!--<script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>-->
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     </head>
     <body>
@@ -33,7 +33,7 @@
 		</div>
 
 	    <div id="nav">
-	    	<h1>DucaApp-Test<br/><input id="tableFilter" type="text" placeholder="filter by.."></input></h1>
+	    	<h1>DucaApp-Test<br/><input id="tableFilter" type="text" placeholder="filter by.."></input><button id="search-btn"></button></h1>
 	    </div>
 	   	<div id="content">
 	   		<!--<button id="button-showinfo">Show Info</button>-->
@@ -68,6 +68,7 @@
 		  };
 		  firebase.initializeApp(config);
 		</script>-->
+		<script type="text/javascript" src="js/handlebars.min-latest.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
