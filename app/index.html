@@ -23,18 +23,35 @@
     	<script type="text/javascript"></script>
     </head>	
     <body>
-	    <h1>A Backbone.js example</h1>
+	    <h1>A Backbone.js example
+			<div>
+				<form>
+		        	<input type='text' name='what' /><br />
+		    	</form>
+			</div>
+	    </h1>
+	    <div id='content'>
+		    
+		</div>
 
 	    <script id="cam-template" type="text/underscore-template">
 	      <div class="entry">
-	        <h2><%= Name %></h2>	        
+	        <h2><%= Make %></h2>
+	        <h3><%= Model %></h3>
+	        <div class="body">
+		        <h5><%= Type %></h5>
+		        <h5><%= Codec %></h5>
+		        <h5><%= Resolution %></h5>
+		        <h5><%= Frame_Rate %></h5>
+				<h5><%= Data_Rate %></h5>
+			</div>	
 	      </div>
 	    </script>
 
 	    <div id="content"></div>
 
 	    <script type="text/javascript">
-	      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml';
+	      var public_spreadsheet_url = 'd/1yD8w4e12OhZz0LkfNm04R8Ab9ukH3w9dyiAEJibScto/pubhtml';
 	        
 	      /* 
 	        You need to declare the tabletop instance separately, then feed it into the model/collection
@@ -48,10 +65,10 @@
 	       Can specify tabletop attributes, or you can do it on the collection
 	      */
 	      var Cam = Backbone.Model.extend({
-	        idAttribute: 'Name',
+	        idAttribute: 'Make',
 	        tabletop: {
 	          instance: storage,
-	          sheet: 'DucaCamChart'
+	          sheet: 'Cats'
 	        },
 	        sync: Backbone.tabletopSync
 	      })
@@ -65,7 +82,7 @@
 	          model: Cam,
 	          tabletop: {
 	            instance: storage,
-	            sheet: 'DucaCamChart'
+	            sheet: 'Cats'
 	          },
 	          sync: Backbone.tabletopSync
 	      });
@@ -79,8 +96,6 @@
 	            return this;
 	          }
 	      })
-	    </script>
-	    <script type="text/javascript">
 
 	      /*
 	        You need to initialize Tabletop before you do aaaaanything.
@@ -94,11 +109,15 @@
 	      });
 	      
 	      function showInfo(cameras) {
-	        var henry_view = new CameraView({ model: cameras.get('Aja') });
+	        var henry_view = new CameraView({ model: cameras.get('AJA') });
 
 	        $("#content").append( henry_view.render().el );
 
-	        var bosco_view = new CameraView({ model: cameras.get('Red') });
+	        var henry_view = new CameraView({ model: cameras.get('Arri') });
+
+	        $("#content").append( henry_view.render().el );
+
+	        var bosco_view = new CameraView({ model: cameras.get('Blackmagic Design') });
 
 	        $("#content").append( bosco_view.render().el );
 
@@ -113,14 +132,12 @@
 	          and an idAttribute for the Backbone.Model (you can always
 	          use rowNumber, it comes baked in to Tabletop)
 	        */
-	        thomas = new Cam({name: 'Thomas'})
+	        thomas = new Cam({name: 'Canon'})
 	        thomas.fetch();
 
 	        var thomas_view = new CameraView({ model: thomas });
 	        $("#content").append( thomas_view.render().el );
 	      }
-	    
-	      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");    
 	    </script>
 	</body>
 </html>
