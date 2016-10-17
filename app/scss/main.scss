@@ -7,7 +7,7 @@ body {
 
 .entry {
   width: 150px;
-  height: 200px;
+  height: auto;
   padding: 30px;
   margin: 20px;
   font-weight: 100;
@@ -16,14 +16,16 @@ body {
   font-style: italic;
   text-align: left;
   align-content: space-around;
+
 }
 
 .entry .body{
-	height: 75px;
-	width: 100px;
+	height: auto;
+	width: 125px;
 	padding: 10px;
 	border-radius: 10px;
 	background-color: rgb(255, 187, 0);
+	border: 2px solid #dba511;
 }
 
 .entry-button:focus {
@@ -79,6 +81,7 @@ h5 {
 	font-weight: 100;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	line-height: 1.25em
 }
 
 #nav {
