@@ -15,40 +15,43 @@
         <link rel="stylesheet" href="css/main.css">
 
 		<!--Main JS-->
-       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-       	<script src="http://listjs.com/no-cdn/list.js"></script>
-		<script src="http://listjs.com/no-cdn/list.fuzzysearch.js"></script>
-    	<script type="text/javascript" src="js/underscore.js"></script>
-    	<script type="text/javascript" src="js/backbone.js"></script>
-    	<script type="text/javascript" src="js/backbone.tabletopSync.js"></script>
-    	<script type="text/javascript" src="js/tabletop.js"></script>
-    	<script type="text/javascript" src="js/main.js"></script>
+       	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+    	<script type="text/javascript" src="js/sheetsee.js"></script>
+    	<script type="text/javascript" src="js/tabletop1.3.4.js"></script>
     </head>	
     <body>
-	    <h1>Backbone.JS
-			<div class="search-container">
-				<form>
-		        	<input type='text' placeholder="Search..." />
-		    	</form>
-			</div>
-	    </h1>
+	  <div class="container">
+	    <h1>Duca-App</h1>
+	    <input id="fullTableFilter" type="text" placeholder="filter by.."></input>
+	    <div id="fullTable"></div>
 
-	    <script id="cam-template" type="text/underscore-template">
-		    <div class="entry">
-		        <h2 class="make"><%= Make %></h2>
-		        <h3 class="model"><%= Model %></h3>
-		        <div class="body">
-			        <h5 class="type"><%= Type %></h5>
-			        <h5 class="codec"><%= Codec %></h5>
-			        <h5 class="resolution"><%= Resolution %></h5>
-			        <h5 class="frame_rate"><%= Frame_Rate %></h5>
-					<h5 class="data_rate"><%= Data_Rate %></h5>
-				</div>	
-		    </div>
-	    </script>
+	</div>
 
-	    <div id="content"></div>
+	<script id="fullTable_template" type="text/html">
+	  <table>
+	      {{#rows}}
+	        <tr><td>{{make}}</td><td>{{model}}</td><td>{{type}}</td><td>{{codec}}</td><td>{{resolution}}</td><td>{{framerate}}</td><td>{{datarate}}</td></tr>
+	      {{/rows}}
+	  </table>
+	</script>
 
-	    
+
+	<script type="text/javascript">
+	  document.addEventListener('DOMContentLoaded', function() {
+	    var URL = "d/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml";
+	    Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+	  });
+
+	  function showInfo(data) {
+	    var tableOptions = {"data": data
+	    , "pagination": 2000, "tableDiv": "#fullTable", "filterDiv": "#fullTableFilter"}
+	    Sheetsee.makeTable(tableOptions)
+	    Sheetsee.initiateTableFilter(tableOptions)
+
+	  }
+
+
+	</script>
+
 	</body>
 </html>

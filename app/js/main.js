@@ -5,9 +5,11 @@ $(document).ready(function(){
 	var public_spreadsheet_url = 'd/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml';
 
 	var storage = Tabletop.init( { 	key: public_spreadsheet_url,
-	                            	wait: true } );
+	                            	wait: true,
+									simpleSheet: true } );
 
 	function showInfo(cameras) {
+
 		var cameraView;
 
 		cameras.each(function(model) {
@@ -16,6 +18,11 @@ $(document).ready(function(){
 			});
 			$("#content").append(camera_view.render().el);
 		});
+
+		var tableOptions = {"data": cameras, "Div": "#entry", "filterDiv": ".cam-search"};
+    	
+    	Sheetsee.makeTable(tableOptions);
+    	Sheetsee.initiateTableFilter(tableOptions);
 	}
 
 	var CameraView = Backbone.View.extend({
@@ -47,15 +54,11 @@ $(document).ready(function(){
 		sync: Backbone.tabletopSync
 	});
 
+
+
 	//alert("Its aliiiive!!!!");
 	var cameras = new CameraCollection();
 	cameras.fetch({ success: showInfo });
-
-	var options = {
-	  valueNames: [ 'make' , 'model' , 'type' , 'codec' , 'resolution' , 'frame_rate' , 'data_rate' ]
-	};
-
-	var cameraList = new List('camp-template', options);
 
 });
 
