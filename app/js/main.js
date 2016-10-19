@@ -38,7 +38,7 @@ $(document).ready(function(){
 	});
 
 	var CameraCollection = Backbone.Collection.extend({
-	          // Reference to this collection's model.
+	    // Reference to this collection's model.
 		model: Cam,
 		tabletop: {
 		    instance: storage,
@@ -47,12 +47,18 @@ $(document).ready(function(){
 		sync: Backbone.tabletopSync
 	});
 
-	alert("Its aliiiive!!!!");
+	//alert("Its aliiiive!!!!");
 	var cameras = new CameraCollection();
 	cameras.fetch({ success: showInfo });
 
+	var options = {
+	  valueNames: [ 'make' , 'model' , 'type' , 'codec' , 'resolution' , 'frame_rate' , 'data_rate' ]
+	};
+
+	var cameraList = new List('camp-template', options);
 
 });
+
 
 
 

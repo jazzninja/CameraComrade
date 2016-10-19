@@ -15,7 +15,9 @@
         <link rel="stylesheet" href="css/main.css">
 
 		<!--Main JS-->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       	<script src="http://listjs.com/no-cdn/list.js"></script>
+		<script src="http://listjs.com/no-cdn/list.fuzzysearch.js"></script>
     	<script type="text/javascript" src="js/underscore.js"></script>
     	<script type="text/javascript" src="js/backbone.js"></script>
     	<script type="text/javascript" src="js/backbone.tabletopSync.js"></script>
@@ -23,29 +25,26 @@
     	<script type="text/javascript" src="js/main.js"></script>
     </head>	
     <body>
-	    <h1>A Backbone.js example
-			<div>
+	    <h1>Backbone.JS
+			<div class="search-container">
 				<form>
-		        	<input type='text' name='what' /><br />
+		        	<input type='text' placeholder="Search..." />
 		    	</form>
 			</div>
 	    </h1>
-	    <div id='content'>
-		    
-		</div>
 
 	    <script id="cam-template" type="text/underscore-template">
-	      <div class="entry">
-	        <h2><%= Make %></h2>
-	        <h3><%= Model %></h3>
-	        <div class="body">
-		        <h5><%= Type %></h5>
-		        <h5><%= Codec %></h5>
-		        <h5><%= Resolution %></h5>
-		        <h5><%= Frame_Rate %></h5>
-				<h5><%= Data_Rate %></h5>
-			</div>	
-	      </div>
+		    <div class="entry">
+		        <h2 class="make"><%= Make %></h2>
+		        <h3 class="model"><%= Model %></h3>
+		        <div class="body">
+			        <h5 class="type"><%= Type %></h5>
+			        <h5 class="codec"><%= Codec %></h5>
+			        <h5 class="resolution"><%= Resolution %></h5>
+			        <h5 class="frame_rate"><%= Frame_Rate %></h5>
+					<h5 class="data_rate"><%= Data_Rate %></h5>
+				</div>	
+		    </div>
 	    </script>
 
 	    <div id="content"></div>
