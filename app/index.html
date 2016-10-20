@@ -21,25 +21,51 @@
     </head>	
     <body>
 	  <div class="container">
-	    <h1>Duca-App</h1>
-	    <input id="fullTableFilter" type="text" placeholder="filter by.."></input>
+	    
+		<div id="splash" onclick="SplashBeGone(); return false;">
+  			<h1>Welcome to DucaApp-Test</h1>
+		</div>
+
+	    <div id="nav">
+	    	<h1>Duca-App</h1>
+	    	<div class="search">
+	    		<input id="fullTableFilter" type="text" placeholder="filter by.."></input>
+	    	</div>	
+	    </div>
+
 	    <div id="fullTable"></div>
 
 	</div>
 
 	<script id="fullTable_template" type="text/html">
-	  <table>
+	  	<table>
 	      {{#rows}}
-	        <tr><td>{{make}}</td><td>{{model}}</td><td>{{type}}</td><td>{{codec}}</td><td>{{resolution}}</td><td>{{framerate}}</td><td>{{datarate}}</td></tr>
+	        <button class="entry-button">
+		        <div class="make">
+			        <div class="entry">
+		        	<h2>{{make}}</h2>
+		        	<h3>{{model}}</h3>
+			        	<div class="body">
+			          		{{{type}}}<br>
+			          		{{{codec}}}<br>
+			          		{{{resolution}}}<br>
+			          		{{{framerate}}}<br>
+							{{{datarate}}}
+			        	</div>
+		      	</div>    
+		        </div>
+		        
+	        </button>
 	      {{/rows}}
-	  </table>
+	  	</table>
 	</script>
 
 
 	<script type="text/javascript">
 	  document.addEventListener('DOMContentLoaded', function() {
 	    var URL = "d/1jspbTfijbvU7FUhICp6rXZfOXs6avxpBifLdxoYXj-E/pubhtml";
-	    Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+	    Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } );
+	    Init();
 	  });
 
 	  function showInfo(data) {
@@ -49,6 +75,14 @@
 	    Sheetsee.initiateTableFilter(tableOptions)
 
 	  }
+
+	  function SplashBeGone() { 
+		 document.getElementById('splash').style.display = 'none'; 
+	  }
+
+	  function Init() { 
+	     document.getElementById('splash').style.display = 'block'; 
+	  }  
 
 
 	</script>
