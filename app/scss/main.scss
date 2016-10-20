@@ -93,7 +93,7 @@ h2 {
 	position: relative;
     width: 85%;
     margin: 0 auto;
-    margin-top: 115px;
+    margin-top: 130px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -116,6 +116,11 @@ h2 {
 input#tableFilter:focus {
 	outline: none;
 	outline: 0;
+}
+
+.search {
+	display: table;
+    margin: 20px auto;
 }
 
 /*input {
